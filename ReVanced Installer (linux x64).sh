@@ -2,7 +2,7 @@
 
 echo "======================"
 echo " ReVanced Installer"
-echo " v1.0.0"
+echo " v1.0.3"
 echo "======================"
 
 echo ""
@@ -49,15 +49,15 @@ cliUrl="https://api.github.com/repos/revanced/revanced-cli/releases/latest"
 patchesUrl="https://api.github.com/repos/revanced/revanced-patches/releases/latest"
 integrationsUrl="https://api.github.com/repos/revanced/revanced-integrations/releases/latest"
 
-string=$(curl -s "$cliUrl" --header "Authorization: Bearer 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")
+string=$(curl -s "$cliUrl")
 cliDownloadUrl=$(echo "$string" | grep "browser_download_url" | cut -d '"' -f 4)
 cliVersion=$(echo "$string" | grep "tag_name" | cut -d '"' -f 4)
 
-string=$(curl -s "$patchesUrl" --header "Authorization: Bearer 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")
+string=$(curl -s "$patchesUrl")
 patchesDownloadUrl=$(echo "$string" | grep "browser_download_url" | cut -d '"' -f 4)
 patchesVersion=$(echo "$string" | grep "tag_name" | cut -d '"' -f 4)
 
-string=$(curl -s "$integrationsUrl" --header "Authorization: Bearer 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")
+string=$(curl -s "$integrationsUrl")
 integrationsDownloadUrl=$(echo "$string" | grep "browser_download_url" | cut -d '"' -f 4)
 integrationsVersion=$(echo "$string" | grep "tag_name" | cut -d '"' -f 4)
 
@@ -91,7 +91,7 @@ echo "===== Getting YouTube APK ====="
 if [ -d "YouTube.apk" ]
 echo "YouTube APK already downloaded!"
 else
-curl -L --ssl-no-revoke -o YouTube.apk https://www.dropbox.com/s/kyxl6e9920mt2pm/YouTube.apk?dl=1
+curl -L --ssl-no-revoke -o YouTube.apk https://github.com/Natoune/ReVanced-Installer/raw/main/YouTube.apk
 fi
 
 echo ""
@@ -100,7 +100,7 @@ echo "===== Getting MicroG APK ====="
 if [ -d "Vanced MicroG.apk" ]
 echo "Vanced MicroG APK already downloaded!"
 else
-curl -L --ssl-no-revoke -o "Vanced MicroG.apk" https://www.dropbox.com/s/w1ay9vztkqo7s0b/Vanced%20MicroG.apk?dl=1
+curl -L --ssl-no-revoke -o "Vanced MicroG.apk" https://github.com/Natoune/ReVanced-Installer/raw/main/Vanced%20MicroG.apk
 fi
 
 echo ""

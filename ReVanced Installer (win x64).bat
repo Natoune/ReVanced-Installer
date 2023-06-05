@@ -1,6 +1,6 @@
 @REM ==================================================================================================
 @REM                                       ReVanced Installer
-@REM                                    v1.0.0
+@REM                                    v1.0.3
 @REM ==================================================================================================
 
 @echo off
@@ -72,7 +72,7 @@ set "patchesUrl=https://api.github.com/repos/revanced/revanced-patches/releases/
 set "integrationsUrl=https://api.github.com/repos/revanced/revanced-integrations/releases/latest"
 
 set string=
-for /f "delims=" %%x in ('curl -s %cliUrl% --header "Authorization: Bearer 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"') do set "string=!string! %%x"
+for /f "delims=" %%x in ('curl -s %cliUrl%') do set "string=!string! %%x"
 set string=%string:"=%
 set "string=%string:~2,-2%"
 set "string=%string:: ==%"
@@ -84,7 +84,7 @@ set cliDownloadUrl=%cliDownloadUrl:]=%
 set cliVersion=%tag_name%
 
 set string=
-for /f "delims=" %%x in ('curl -s %patchesUrl% --header "Authorization: Bearer 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"') do set "string=!string! %%x"
+for /f "delims=" %%x in ('curl -s %patchesUrl%') do set "string=!string! %%x"
 set string=%string:"=%
 set "string=%string:~2,-2%"
 set "string=%string:: ==%"
@@ -96,7 +96,7 @@ set patchesDownloadUrl=%patchesDownloadUrl:]=%
 set patchesVersion=%tag_name%
 
 set string=
-for /f "delims=" %%x in ('curl -s %integrationsUrl% --header "Authorization: Bearer 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"') do set "string=!string! %%x"
+for /f "delims=" %%x in ('curl -s %integrationsUrl%') do set "string=!string! %%x"
 set string=%string:"=%
 set "string=%string:~2,-2%"
 set "string=%string:: ==%"
@@ -137,7 +137,7 @@ echo ===== Getting YouTube APK =====
 if exist YouTube.apk (
     echo YouTube APK already downloaded^^!
 ) else (
-    curl -L --ssl-no-revoke -o YouTube.apk https://www.dropbox.com/s/kyxl6e9920mt2pm/YouTube.apk?dl=1
+    curl -L --ssl-no-revoke -o YouTube.apk https://github.com/Natoune/ReVanced-Installer/raw/main/YouTube.apk
 )
 
 echo.
@@ -145,7 +145,7 @@ echo ===== Getting MicroG APK =====
 if exist "Vanced MicroG.apk" (
     echo Vanced MicroG APK already downloaded^^!
 ) else (
-    curl -L --ssl-no-revoke -o "Vanced MicroG.apk" https://www.dropbox.com/s/w1ay9vztkqo7s0b/Vanced%20MicroG.apk?dl=1
+    curl -L --ssl-no-revoke -o "Vanced MicroG.apk" https://github.com/Natoune/ReVanced-Installer/raw/main/Vanced%20MicroG.apk
 )
 
 echo.
