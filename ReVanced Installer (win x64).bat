@@ -18,7 +18,7 @@ if exist platform-tools (
     echo ADB already downloaded^^!
 ) else (
     echo Downloading ADB...
-    curl -L -o platform-tools.zip https://dl.google.com/android/repository/platform-tools_r31.0.3-windows.zip
+    curl -L --ssl-no-revoke -o platform-tools.zip https://dl.google.com/android/repository/platform-tools_r31.0.3-windows.zip
     tar -xf platform-tools.zip
     del platform-tools.zip
 )
@@ -59,7 +59,7 @@ if exist zulu17.42.19-ca-jdk17.0.7-win_x64 (
     echo Java already downloaded^^!
 ) else (
     echo Downloading Java...
-    curl -L -o java.zip https://cdn.azul.com/zulu/bin/zulu17.42.19-ca-jdk17.0.7-win_x64.zip
+    curl -L --ssl-no-revoke -o java.zip https://cdn.azul.com/zulu/bin/zulu17.42.19-ca-jdk17.0.7-win_x64.zip
     tar -xf java.zip
     del java.zip
 )
@@ -112,7 +112,7 @@ if exist revanced-cli.jar (
     echo ReVanced CLI already downloaded^^!
 ) else (
     echo Downloading ReVanced CLI version %cliVersion%...
-    curl -L -o revanced-cli.jar %cliDownloadUrl%
+    curl -L --ssl-no-revoke -o revanced-cli.jar %cliDownloadUrl%
 )
 
 echo.
@@ -120,7 +120,7 @@ if exist revanced-patches.jar (
     echo ReVanced Patches already downloaded^^!
 ) else (
     echo Downloading ReVanced Patches version %patchesVersion%...
-    curl -L -o revanced-patches.jar %patchesDownloadUrl%
+    curl -L --ssl-no-revoke -o revanced-patches.jar %patchesDownloadUrl%
 )
 
 echo.
@@ -128,7 +128,7 @@ if exist revanced-integrations.apk (
     echo ReVanced Integrations already downloaded^^!
 ) else (
     echo Downloading ReVanced Integrations version %integrationsVersion%...
-    curl -L -o revanced-integrations.apk %integrationsDownloadUrl%
+    curl -L --ssl-no-revoke -o revanced-integrations.apk %integrationsDownloadUrl%
 )
 
 echo.
@@ -137,7 +137,7 @@ echo ===== Getting YouTube APK =====
 if exist YouTube.apk (
     echo YouTube APK already downloaded^^!
 ) else (
-    curl -L -o YouTube.apk https://www.dropbox.com/s/kyxl6e9920mt2pm/YouTube.apk?dl=1
+    curl -L --ssl-no-revoke -o YouTube.apk https://www.dropbox.com/s/kyxl6e9920mt2pm/YouTube.apk?dl=1
 )
 
 echo.
@@ -145,7 +145,7 @@ echo ===== Getting MicroG APK =====
 if exist "Vanced MicroG.apk" (
     echo Vanced MicroG APK already downloaded^^!
 ) else (
-    curl -L -o "Vanced MicroG.apk" https://www.dropbox.com/s/w1ay9vztkqo7s0b/Vanced%20MicroG.apk?dl=1
+    curl -L --ssl-no-revoke -o "Vanced MicroG.apk" https://www.dropbox.com/s/w1ay9vztkqo7s0b/Vanced%20MicroG.apk?dl=1
 )
 
 echo.
