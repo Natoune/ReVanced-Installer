@@ -8,7 +8,7 @@ setlocal EnableDelayedExpansion
 
 echo ======================
 echo   ReVanced Installer
-echo v1.0.0
+echo v1.0.3
 echo ======================
 
 echo.
